@@ -1,0 +1,241 @@
+﻿@timestamp,service.name,deployment.environment,log.level,message,event.action,http.response.status_code,duration_ms,db.pool.active,db.pool.max,trace.id
+2026-12-10T19:20:00Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,415,16,40,00000000000000000000000000000001
+2026-12-10T19:20:11Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,452,20,40,00000000000000000000000000000002
+2026-12-10T19:20:22Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,274,15,40,00000000000000000000000000000003
+2026-12-10T19:20:33Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,298,17,40,00000000000000000000000000000004
+2026-12-10T19:20:44Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,279,19,40,00000000000000000000000000000005
+2026-12-10T19:20:55Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,359,15,40,00000000000000000000000000000006
+2026-12-10T19:21:06Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,294,18,40,00000000000000000000000000000007
+2026-12-10T19:21:17Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,464,15,40,00000000000000000000000000000008
+2026-12-10T19:21:28Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,373,15,40,00000000000000000000000000000009
+2026-12-10T19:21:39Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,467,15,40,0000000000000000000000000000000a
+2026-12-10T19:21:50Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,313,16,40,0000000000000000000000000000000b
+2026-12-10T19:22:01Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,281,19,40,0000000000000000000000000000000c
+2026-12-10T19:22:12Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,453,15,40,0000000000000000000000000000000d
+2026-12-10T19:22:23Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,363,15,40,0000000000000000000000000000000e
+2026-12-10T19:22:34Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,318,17,40,0000000000000000000000000000000f
+2026-12-10T19:22:45Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,464,16,40,00000000000000000000000000000010
+2026-12-10T19:22:56Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,310,19,40,00000000000000000000000000000011
+2026-12-10T19:23:07Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,407,19,40,00000000000000000000000000000012
+2026-12-10T19:23:18Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,342,15,40,00000000000000000000000000000013
+2026-12-10T19:23:29Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,346,17,40,00000000000000000000000000000014
+2026-12-10T19:23:40Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,299,19,40,00000000000000000000000000000015
+2026-12-10T19:23:51Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,282,19,40,00000000000000000000000000000016
+2026-12-10T19:24:02Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,280,19,40,00000000000000000000000000000017
+2026-12-10T19:24:13Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,355,18,40,00000000000000000000000000000018
+2026-12-10T19:24:24Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,468,21,40,00000000000000000000000000000019
+2026-12-10T19:24:35Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,410,18,40,0000000000000000000000000000001a
+2026-12-10T19:24:46Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,482,17,40,0000000000000000000000000000001b
+2026-12-10T19:24:57Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,403,16,40,0000000000000000000000000000001c
+2026-12-10T19:25:08Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,342,20,40,0000000000000000000000000000001d
+2026-12-10T19:25:19Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,374,15,40,0000000000000000000000000000001e
+2026-12-10T19:25:30Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,403,19,40,0000000000000000000000000000001f
+2026-12-10T19:25:41Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,503,17,40,00000000000000000000000000000020
+2026-12-10T19:25:52Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,479,17,40,00000000000000000000000000000021
+2026-12-10T19:26:03Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,287,15,40,00000000000000000000000000000022
+2026-12-10T19:26:14Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,512,18,40,00000000000000000000000000000023
+2026-12-10T19:26:25Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,334,21,40,00000000000000000000000000000024
+2026-12-10T19:26:36Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,425,16,40,00000000000000000000000000000025
+2026-12-10T19:26:47Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,500,18,40,00000000000000000000000000000026
+2026-12-10T19:26:58Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,270,20,40,00000000000000000000000000000027
+2026-12-10T19:27:09Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,289,21,40,00000000000000000000000000000028
+2026-12-10T19:27:20Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,410,17,40,00000000000000000000000000000029
+2026-12-10T19:27:31Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,429,19,40,0000000000000000000000000000002a
+2026-12-10T19:27:42Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,504,19,40,0000000000000000000000000000002b
+2026-12-10T19:27:53Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,483,15,40,0000000000000000000000000000002c
+2026-12-10T19:28:04Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,297,17,40,0000000000000000000000000000002d
+2026-12-10T19:28:15Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,492,20,40,0000000000000000000000000000002e
+2026-12-10T19:28:26Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,283,15,40,0000000000000000000000000000002f
+2026-12-10T19:28:37Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,408,20,40,00000000000000000000000000000030
+2026-12-10T19:28:48Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,478,17,40,00000000000000000000000000000031
+2026-12-10T19:28:59Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,447,20,40,00000000000000000000000000000032
+2026-12-10T19:29:10Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,427,15,40,00000000000000000000000000000033
+2026-12-10T19:29:21Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,486,17,40,00000000000000000000000000000034
+2026-12-10T19:29:32Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,336,19,40,00000000000000000000000000000035
+2026-12-10T19:29:43Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,309,18,40,00000000000000000000000000000036
+2026-12-10T19:29:54Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,280,16,40,00000000000000000000000000000037
+2026-12-10T19:30:05Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,397,16,40,00000000000000000000000000000038
+2026-12-10T19:30:16Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,376,18,40,00000000000000000000000000000039
+2026-12-10T19:30:27Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,450,21,40,0000000000000000000000000000003a
+2026-12-10T19:30:38Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,504,15,40,0000000000000000000000000000003b
+2026-12-10T19:30:49Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,335,18,40,0000000000000000000000000000003c
+2026-12-10T19:31:00Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,455,19,40,0000000000000000000000000000003d
+2026-12-10T19:31:11Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,392,16,40,0000000000000000000000000000003e
+2026-12-10T19:31:22Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,470,21,40,0000000000000000000000000000003f
+2026-12-10T19:31:33Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,392,20,40,00000000000000000000000000000040
+2026-12-10T19:31:44Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,462,17,40,00000000000000000000000000000041
+2026-12-10T19:31:55Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,444,16,40,00000000000000000000000000000042
+2026-12-10T19:32:06Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,327,15,40,00000000000000000000000000000043
+2026-12-10T19:32:17Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,340,16,40,00000000000000000000000000000044
+2026-12-10T19:32:28Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,368,20,40,00000000000000000000000000000045
+2026-12-10T19:32:39Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,369,15,40,00000000000000000000000000000046
+2026-12-10T19:32:50Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,498,21,40,00000000000000000000000000000047
+2026-12-10T19:33:01Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,343,17,40,00000000000000000000000000000048
+2026-12-10T19:33:12Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,394,15,40,00000000000000000000000000000049
+2026-12-10T19:33:23Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,324,18,40,0000000000000000000000000000004a
+2026-12-10T19:33:34Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,439,19,40,0000000000000000000000000000004b
+2026-12-10T19:33:45Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,413,16,40,0000000000000000000000000000004c
+2026-12-10T19:33:56Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,513,19,40,0000000000000000000000000000004d
+2026-12-10T19:34:07Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,277,18,40,0000000000000000000000000000004e
+2026-12-10T19:34:18Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,450,18,40,0000000000000000000000000000004f
+2026-12-10T19:34:29Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,454,18,40,00000000000000000000000000000050
+2026-12-10T19:34:40Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,303,18,40,00000000000000000000000000000051
+2026-12-10T19:34:51Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,455,15,40,00000000000000000000000000000052
+2026-12-10T19:35:02Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2695,40,40,00000000000000000000000000000053
+2026-12-10T19:35:13Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2568,40,40,00000000000000000000000000000054
+2026-12-10T19:35:24Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2313,40,40,00000000000000000000000000000055
+2026-12-10T19:35:35Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2551,40,40,00000000000000000000000000000056
+2026-12-10T19:35:46Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2266,40,40,00000000000000000000000000000057
+2026-12-10T19:35:57Z,checkout-service,training,WARN,payment request delayed,payment.delayed,200,1012,39,40,00000000000000000000000000000058
+2026-12-10T19:36:08Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,1948,39,40,00000000000000000000000000000059
+2026-12-10T19:36:19Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,2215,39,40,0000000000000000000000000000005a
+2026-12-10T19:36:30Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2553,40,40,0000000000000000000000000000005b
+2026-12-10T19:36:41Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2604,40,40,0000000000000000000000000000005c
+2026-12-10T19:36:52Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2500,40,40,0000000000000000000000000000005d
+2026-12-10T19:37:03Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3080,40,40,0000000000000000000000000000005e
+2026-12-10T19:37:14Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2254,40,40,0000000000000000000000000000005f
+2026-12-10T19:37:25Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2649,40,40,00000000000000000000000000000060
+2026-12-10T19:37:36Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2203,40,40,00000000000000000000000000000061
+2026-12-10T19:37:47Z,checkout-service,training,WARN,payment request delayed,payment.delayed,200,1272,39,40,00000000000000000000000000000062
+2026-12-10T19:37:58Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,2228,39,40,00000000000000000000000000000063
+2026-12-10T19:38:09Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,1626,39,40,00000000000000000000000000000064
+2026-12-10T19:38:20Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2572,40,40,00000000000000000000000000000065
+2026-12-10T19:38:31Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2712,40,40,00000000000000000000000000000066
+2026-12-10T19:38:42Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3128,40,40,00000000000000000000000000000067
+2026-12-10T19:38:53Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2885,40,40,00000000000000000000000000000068
+2026-12-10T19:39:04Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2252,40,40,00000000000000000000000000000069
+2026-12-10T19:39:15Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2749,40,40,0000000000000000000000000000006a
+2026-12-10T19:39:26Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2358,40,40,0000000000000000000000000000006b
+2026-12-10T19:39:37Z,checkout-service,training,WARN,payment request delayed,payment.delayed,200,1255,39,40,0000000000000000000000000000006c
+2026-12-10T19:39:48Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,2216,39,40,0000000000000000000000000000006d
+2026-12-10T19:39:59Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,1972,39,40,0000000000000000000000000000006e
+2026-12-10T19:40:10Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2985,40,40,0000000000000000000000000000006f
+2026-12-10T19:40:21Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2625,40,40,00000000000000000000000000000070
+2026-12-10T19:40:32Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2618,40,40,00000000000000000000000000000071
+2026-12-10T19:40:43Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2999,40,40,00000000000000000000000000000072
+2026-12-10T19:40:54Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2577,40,40,00000000000000000000000000000073
+2026-12-10T19:41:05Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2591,40,40,00000000000000000000000000000074
+2026-12-10T19:41:16Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2595,40,40,00000000000000000000000000000075
+2026-12-10T19:41:27Z,checkout-service,training,WARN,payment request delayed,payment.delayed,200,1219,39,40,00000000000000000000000000000076
+2026-12-10T19:41:38Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,1687,39,40,00000000000000000000000000000077
+2026-12-10T19:41:49Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,1747,39,40,00000000000000000000000000000078
+2026-12-10T19:42:00Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2604,40,40,00000000000000000000000000000079
+2026-12-10T19:42:11Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3267,40,40,0000000000000000000000000000007a
+2026-12-10T19:42:22Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2850,40,40,0000000000000000000000000000007b
+2026-12-10T19:42:33Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3258,40,40,0000000000000000000000000000007c
+2026-12-10T19:42:44Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2371,40,40,0000000000000000000000000000007d
+2026-12-10T19:42:55Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2590,40,40,0000000000000000000000000000007e
+2026-12-10T19:43:06Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2948,40,40,0000000000000000000000000000007f
+2026-12-10T19:43:17Z,checkout-service,training,WARN,payment request delayed,payment.delayed,200,1065,39,40,00000000000000000000000000000080
+2026-12-10T19:43:28Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,2128,39,40,00000000000000000000000000000081
+2026-12-10T19:43:39Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,1623,39,40,00000000000000000000000000000082
+2026-12-10T19:43:50Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2710,40,40,00000000000000000000000000000083
+2026-12-10T19:44:01Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3040,40,40,00000000000000000000000000000084
+2026-12-10T19:44:12Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2870,40,40,00000000000000000000000000000085
+2026-12-10T19:44:23Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2650,40,40,00000000000000000000000000000086
+2026-12-10T19:44:34Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2806,40,40,00000000000000000000000000000087
+2026-12-10T19:44:45Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2656,40,40,00000000000000000000000000000088
+2026-12-10T19:44:56Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,3036,40,40,00000000000000000000000000000089
+2026-12-10T19:45:07Z,checkout-service,training,WARN,payment request delayed,payment.delayed,200,927,39,40,0000000000000000000000000000008a
+2026-12-10T19:45:18Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,2376,39,40,0000000000000000000000000000008b
+2026-12-10T19:45:29Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,2140,39,40,0000000000000000000000000000008c
+2026-12-10T19:45:40Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2805,40,40,0000000000000000000000000000008d
+2026-12-10T19:45:51Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3158,40,40,0000000000000000000000000000008e
+2026-12-10T19:46:02Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2593,40,40,0000000000000000000000000000008f
+2026-12-10T19:46:13Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3212,40,40,00000000000000000000000000000090
+2026-12-10T19:46:24Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2965,40,40,00000000000000000000000000000091
+2026-12-10T19:46:35Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2367,40,40,00000000000000000000000000000092
+2026-12-10T19:46:46Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2630,40,40,00000000000000000000000000000093
+2026-12-10T19:46:57Z,checkout-service,training,WARN,payment request delayed,payment.delayed,200,1275,39,40,00000000000000000000000000000094
+2026-12-10T19:47:08Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,1771,39,40,00000000000000000000000000000095
+2026-12-10T19:47:19Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,1964,39,40,00000000000000000000000000000096
+2026-12-10T19:47:30Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3290,40,40,00000000000000000000000000000097
+2026-12-10T19:47:41Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2728,40,40,00000000000000000000000000000098
+2026-12-10T19:47:52Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3045,40,40,00000000000000000000000000000099
+2026-12-10T19:48:03Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3054,40,40,0000000000000000000000000000009a
+2026-12-10T19:48:14Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2897,40,40,0000000000000000000000000000009b
+2026-12-10T19:48:25Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2614,40,40,0000000000000000000000000000009c
+2026-12-10T19:48:36Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,2437,40,40,0000000000000000000000000000009d
+2026-12-10T19:48:47Z,checkout-service,training,WARN,payment request delayed,payment.delayed,200,1128,39,40,0000000000000000000000000000009e
+2026-12-10T19:48:58Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,2227,39,40,0000000000000000000000000000009f
+2026-12-10T19:49:09Z,checkout-service,training,INFO,checkout request completed slowly,checkout.completed,200,2430,39,40,000000000000000000000000000000a0
+2026-12-10T19:49:20Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,3276,40,40,000000000000000000000000000000a1
+2026-12-10T19:49:31Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2699,40,40,000000000000000000000000000000a2
+2026-12-10T19:49:42Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2745,40,40,000000000000000000000000000000a3
+2026-12-10T19:49:53Z,checkout-service,training,ERROR,database connection pool exhausted,checkout.failed,503,2910,40,40,000000000000000000000000000000a4
+2026-12-10T19:50:04Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,878,25,40,000000000000000000000000000000a5
+2026-12-10T19:50:15Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,1104,29,40,000000000000000000000000000000a6
+2026-12-10T19:50:26Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,765,27,40,000000000000000000000000000000a7
+2026-12-10T19:50:37Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,682,29,40,000000000000000000000000000000a8
+2026-12-10T19:50:48Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,514,24,40,000000000000000000000000000000a9
+2026-12-10T19:50:59Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,904,26,40,000000000000000000000000000000aa
+2026-12-10T19:51:10Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,741,26,40,000000000000000000000000000000ab
+2026-12-10T19:51:21Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,599,29,40,000000000000000000000000000000ac
+2026-12-10T19:51:32Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,809,26,40,000000000000000000000000000000ad
+2026-12-10T19:51:43Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,728,29,40,000000000000000000000000000000ae
+2026-12-10T19:51:54Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,678,26,40,000000000000000000000000000000af
+2026-12-10T19:52:05Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,541,25,40,000000000000000000000000000000b0
+2026-12-10T19:52:16Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,552,25,40,000000000000000000000000000000b1
+2026-12-10T19:52:27Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,740,25,40,000000000000000000000000000000b2
+2026-12-10T19:52:38Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,672,25,40,000000000000000000000000000000b3
+2026-12-10T19:52:49Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,747,28,40,000000000000000000000000000000b4
+2026-12-10T19:53:00Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,901,29,40,000000000000000000000000000000b5
+2026-12-10T19:53:11Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,745,29,40,000000000000000000000000000000b6
+2026-12-10T19:53:22Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,676,29,40,000000000000000000000000000000b7
+2026-12-10T19:53:33Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,543,29,40,000000000000000000000000000000b8
+2026-12-10T19:53:44Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,561,27,40,000000000000000000000000000000b9
+2026-12-10T19:53:55Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,900,29,40,000000000000000000000000000000ba
+2026-12-10T19:54:06Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,884,25,40,000000000000000000000000000000bb
+2026-12-10T19:54:17Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,744,25,40,000000000000000000000000000000bc
+2026-12-10T19:54:28Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,722,29,40,000000000000000000000000000000bd
+2026-12-10T19:54:39Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,670,24,40,000000000000000000000000000000be
+2026-12-10T19:54:50Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,910,29,40,000000000000000000000000000000bf
+2026-12-10T19:55:01Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,702,27,40,000000000000000000000000000000c0
+2026-12-10T19:55:12Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,705,29,40,000000000000000000000000000000c1
+2026-12-10T19:55:23Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,543,29,40,000000000000000000000000000000c2
+2026-12-10T19:55:34Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,581,25,40,000000000000000000000000000000c3
+2026-12-10T19:55:45Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,1030,29,40,000000000000000000000000000000c4
+2026-12-10T19:55:56Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,514,25,40,000000000000000000000000000000c5
+2026-12-10T19:56:07Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,802,27,40,000000000000000000000000000000c6
+2026-12-10T19:56:18Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,912,29,40,000000000000000000000000000000c7
+2026-12-10T19:56:29Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,574,28,40,000000000000000000000000000000c8
+2026-12-10T19:56:40Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,923,28,40,000000000000000000000000000000c9
+2026-12-10T19:56:51Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,742,29,40,000000000000000000000000000000ca
+2026-12-10T19:57:02Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,679,25,40,000000000000000000000000000000cb
+2026-12-10T19:57:13Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,780,28,40,000000000000000000000000000000cc
+2026-12-10T19:57:24Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,567,24,40,000000000000000000000000000000cd
+2026-12-10T19:57:35Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,507,29,40,000000000000000000000000000000ce
+2026-12-10T19:57:46Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,832,24,40,000000000000000000000000000000cf
+2026-12-10T19:57:57Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,769,29,40,000000000000000000000000000000d0
+2026-12-10T19:58:08Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,571,27,40,000000000000000000000000000000d1
+2026-12-10T19:58:19Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,946,25,40,000000000000000000000000000000d2
+2026-12-10T19:58:30Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,1116,29,40,000000000000000000000000000000d3
+2026-12-10T19:58:41Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,514,26,40,000000000000000000000000000000d4
+2026-12-10T19:58:52Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,608,26,40,000000000000000000000000000000d5
+2026-12-10T19:59:03Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,756,25,40,000000000000000000000000000000d6
+2026-12-10T19:59:14Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,891,28,40,000000000000000000000000000000d7
+2026-12-10T19:59:25Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,666,26,40,000000000000000000000000000000d8
+2026-12-10T19:59:36Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,778,27,40,000000000000000000000000000000d9
+2026-12-10T19:59:47Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,927,25,40,000000000000000000000000000000da
+2026-12-10T19:59:58Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,531,29,40,000000000000000000000000000000db
+2026-12-10T20:00:09Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,681,27,40,000000000000000000000000000000dc
+2026-12-10T20:00:20Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,839,28,40,000000000000000000000000000000dd
+2026-12-10T20:00:31Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,917,28,40,000000000000000000000000000000de
+2026-12-10T20:00:42Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,715,28,40,000000000000000000000000000000df
+2026-12-10T20:00:53Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,566,28,40,000000000000000000000000000000e0
+2026-12-10T20:01:04Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,577,28,40,000000000000000000000000000000e1
+2026-12-10T20:01:15Z,checkout-service,training,ERROR,database timeout,checkout.failed,503,1422,29,40,000000000000000000000000000000e2
+2026-12-10T20:01:26Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,509,27,40,000000000000000000000000000000e3
+2026-12-10T20:01:37Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,897,25,40,000000000000000000000000000000e4
+2026-12-10T20:01:48Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,811,24,40,000000000000000000000000000000e5
+2026-12-10T20:01:59Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,897,25,40,000000000000000000000000000000e6
+2026-12-10T20:02:10Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,588,25,40,000000000000000000000000000000e7
+2026-12-10T20:02:21Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,742,28,40,000000000000000000000000000000e8
+2026-12-10T20:02:32Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,871,24,40,000000000000000000000000000000e9
+2026-12-10T20:02:43Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,784,24,40,000000000000000000000000000000ea
+2026-12-10T20:02:54Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,666,29,40,000000000000000000000000000000eb
+2026-12-10T20:03:05Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,765,28,40,000000000000000000000000000000ec
+2026-12-10T20:03:16Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,784,27,40,000000000000000000000000000000ed
+2026-12-10T20:03:27Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,901,24,40,000000000000000000000000000000ee
+2026-12-10T20:03:38Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,786,24,40,000000000000000000000000000000ef
+2026-12-10T20:03:49Z,checkout-service,training,INFO,checkout request completed,checkout.completed,200,627,25,40,000000000000000000000000000000f0
