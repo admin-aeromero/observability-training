@@ -1,0 +1,36 @@
+PROMPT: CREA UN DASHBOARD DE OBSERVABILIDAD EN KIBANA PARA CHECKOUT.
+
+Usa el índice o data stream `sre-lab-logs*` y los campos disponibles en los documentos. Primero confirma que los campos y sus tipos existan; no inventes campos ni asumas que los CSV de métricas están en el mismo índice. Propón una estructura de dashboard con filtros para `service.name`, `deployment.environment` y `@timestamp`.
+
+Incluye paneles útiles para investigar errores, duración de solicitudes y uso del pool de base de datos. Para cada panel indica la visualización, la agregación y una consulta ES|QL ejecutable. Distingue los documentos de solicitud (`event.kind == "event"`) de las alertas (`event.kind == "alert"`). Si el dato no está disponible en los logs, indícalo y especifica qué índice o ingestión adicional se necesita. No afirmes una causa raíz basándote únicamente en correlaciones.
+
+PROMPT: ¿CÓMO CARGO UN ARCHIVO CSV Y LO EXPLORO EN ELASTIC/KIBANA?
+
+Explica los pasos principales para cargar el archivo CSV `sre-lab-logs.csv` en Kibana usando la opción de carga de archivos disponible en Data Visualizer / Machine Learning. Indica cómo revisar la detección de delimitadores, fechas y tipos de campo antes de importar; sugiere `sre-lab-logs` como nombre de índice o adapta el nombre de destino si el usuario indica otro.
+
+Después de la carga, explica cómo confirmar que los documentos se indexaron y cómo consultarlos en Discover. Menciona que los nombres de campos, sus tipos y la disponibilidad de la función pueden variar según la versión y los permisos de Elastic. No des por hecho que CSV se puede consultar directamente sin ingestarlo ni que las métricas de otros archivos ya están en el mismo índice.
+
+PROMPT: GENERA CONSULTAS ES|QL PARA INVESTIGAR ERRORES DE CHECKOUT.
+
+Antes de proponer consultas, usa el índice `sre-lab-logs*` y los campos `service.name`, `log.level`, `message`, `event.kind` y `@timestamp`. Considera que `event.kind == "event"` identifica solicitudes y `event.kind == "alert"` identifica alertas. Devuelve cada consulta completa, con una explicación breve de sus filtros y agregaciones, y señala cualquier requisito de tipo de campo o versión de Elasticsearch.
+
+Incluye:
+1. Conteo de errores por mensaje para `checkout-service`.
+2. Conteo de eventos por nivel de log en intervalos de cinco minutos.
+3. Promedio y máximo de `duration_ms`, y máximo de `db.pool.active`, agrupados por intervalos de cinco minutos para solicitudes de `checkout-service`.
+
+Evita mezclar alertas con solicitudes al calcular estadísticas de tráfico. Si una consulta no se puede ejecutar por diferencias de sintaxis o mapeo, explica qué validar en lugar de inventar resultados.
+
+PROMPT: INDÍCAME DE MANERA BREVE LOS PASOS PRINCIPALES PARA CREAR UN DASHBOARD EN KIBANA.
+
+Resume cómo crear un dashboard, añadir visualizaciones a partir de datos indexados y aplicar filtros de tiempo y campos. Distingue entre una consulta guardada de ES|QL y una visualización: explica que las opciones disponibles dependen de la versión de Kibana. No supongas que un dashboard puede crearse automáticamente si el asistente solo puede generar consultas o instrucciones.
+
+PROMPT: ANALIZA UNA DEGRADACIÓN DE CHECKOUT SIN AFIRMAR UNA CAUSA NO DEMOSTRADA.
+
+Analiza los documentos de `sre-lab-logs*` para `checkout-service`. Separa claramente:
+- Hechos observados y periodo temporal.
+- Hipótesis compatibles con los datos.
+- Evidencia que contradice o no permite confirmar cada hipótesis.
+- Datos adicionales necesarios y siguientes consultas ES|QL.
+
+Filtra las solicitudes con `event.kind == "event"` y revisa las alertas (`event.kind == "alert"`) por separado. No declares causa raíz solo porque dos señales aumenten a la vez. Aclara que los logs son muestras sintéticas y no representan el volumen completo de solicitudes.

@@ -1,0 +1,36 @@
+PROMPT: CREATE A CHECKOUT OBSERVABILITY DASHBOARD IN KIBANA.
+
+Use the `sre-lab-logs*` index or data stream and the fields available in the documents. First, verify that the fields and their types exist; do not invent fields or assume that the metrics CSV files are in the same index. Propose a dashboard structure with filters for `service.name`, `deployment.environment`, and `@timestamp`.
+
+Include panels useful for investigating errors, request duration, and database pool usage. For each panel, specify the visualization, aggregation, and an executable ES|QL query. Distinguish request documents (`event.kind == "event"`) from alerts (`event.kind == "alert"`). If a data point is unavailable in the logs, indicate this and specify which additional index or ingestion process is needed. Do not assert a root cause based solely on correlations.
+
+PROMPT: HOW DO I UPLOAD A CSV FILE AND EXPLORE IT IN ELASTIC/KIBANA?
+
+Explain the main steps for uploading the `sre-lab-logs.csv` CSV file into Kibana using the file upload option available in Data Visualizer / Machine Learning. Specify how to review delimiter detection, dates, and field types before importing; suggest `sre-lab-logs` as the index name or adapt the destination name if the user provides another.
+
+After upload, explain how to confirm that the documents were indexed and how to query them in Discover. Mention that field names, field types, and feature availability may vary depending on the Elastic version and permissions. Do not assume that a CSV can be queried directly without ingestion or that metrics from other files are already in the same index.
+
+PROMPT: GENERATE ES|QL QUERIES TO INVESTIGATE CHECKOUT ERRORS.
+
+Before proposing queries, use the `sre-lab-logs*` index and the `service.name`, `log.level`, `message`, `event.kind`, and `@timestamp` fields. Consider `event.kind == "event"` to identify requests and `event.kind == "alert"` to identify alerts. Return each complete query with a brief explanation of its filters and aggregations, and indicate any field-type or Elasticsearch-version requirements.
+
+Include:
+1. Error count by message for `checkout-service`.
+2. Event count by log level in five-minute intervals.
+3. Average and maximum `duration_ms`, and maximum `db.pool.active`, grouped in five-minute intervals for `checkout-service` requests.
+
+Avoid mixing alerts with requests when calculating traffic statistics. If a query cannot run due to syntax or mapping differences, explain what to validate instead of inventing results.
+
+PROMPT: BRIEFLY INDICATE THE MAIN STEPS FOR CREATING A DASHBOARD IN KIBANA.
+
+Summarize how to create a dashboard, add visualizations from indexed data, and apply time and field filters. Distinguish a saved ES|QL query from a visualization, and explain that available options depend on the Kibana version. Do not assume that a dashboard can be created automatically if the assistant can only generate queries or instructions.
+
+PROMPT: ANALYZE A CHECKOUT DEGRADATION WITHOUT ASSERTING AN UNPROVEN CAUSE.
+
+Analyze documents from `sre-lab-logs*` for `checkout-service`. Clearly separate:
+- Observed facts and the time period.
+- Hypotheses consistent with the data.
+- Evidence that contradicts or does not confirm each hypothesis.
+- Additional data needed and next ES|QL queries.
+
+Filter requests with `event.kind == "event"` and review alerts (`event.kind == "alert"`) separately. Do not declare a root cause merely because two signals increase at the same time. Clarify that the logs are synthetic samples and do not represent the complete request volume.

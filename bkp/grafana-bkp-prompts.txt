@@ -1,0 +1,29 @@
+
+PROMPT: GENERA UN DASHBOARD DE METRICAS.
+PROMPT: COMO GENERO UN DASHBOARD A PARTIR DE UN ARCHIVO DE METRICAS EN FORMATO CSV? 
+
+Para un archivo CSV, la forma más simple es usar el data source Infinity. Lee CSV desde una URL o desde datos pegados directamente (inline).
+
+Instala o agrega Infinity: ve a Connections > Data sources > Add new data source y busca Infinity. No uses el plugin "CSV", porque Infinity es más flexible y tiene mantenimiento activo.
+Crea el dashboard: ve a Dashboards > New > New dashboard > Add visualization y selecciona tu data source Infinity.
+Configura la consulta:
+Elige Type = CSV.
+Si el archivo está en una URL pública o interna, usa Source = URL y Method = GET, y escribe la URL.
+Si solo lo tienes en tu equipo, usa Source = Inline y pega el contenido. El límite es de unos 1 MB.
+Define las columnas: en Parsing options & Result fields, indica el tipo de cada columna. Pon la columna de fecha como timestamp y los valores como number. Si no lo haces, Infinity trata todo como texto y no puedes ver series de tiempo.
+Elige la visualización: usa Time series para métricas en el tiempo, o Table para revisar los datos primero. Después guarda el dashboard.
+Ejemplo de CSV inline:
+
+timestamp,cpu,memory
+2026-11-20T10:00:00Z,45,62
+2026-11-20T10:05:00Z,51,64
+Si el CSV es grande o se actualiza con frecuencia, es mejor cargarlo a una base de datos de series de tiempo (Prometheus, InfluxDB o PostgreSQL) y conectar Grafana a esa base.
+
+Más información: Build a dashboard using Infinity, How to visualize CSV data with Grafana, Infinity CSV docs
+
+PROMPT: INDICAME DE MANERA BREVE LOS PASOS PRINCIPALES PARA LA CREACION DE UN DASHBOARD?
+
+
+
+
+

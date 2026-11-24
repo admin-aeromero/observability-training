@@ -1,0 +1,29 @@
+# 1. Group errors by environment and message
+# Selects only request events with an ERROR level from the checkout-service.
+# Counts how many times each message appears and groups the results by deployment environment.
+# Sorts the messages from the highest to the lowest number of errors.
+FROM sre-lab-logs* | WHERE `service.name` == "checkout-service" AND `event.kind` == "event" AND `log.level` == "ERROR" | STATS errors = COUNT(*) BY `deployment.environment`, message | SORT errors DESC
+
+# 2. Count events at five-minute intervals
+# Filters only checkout-service request events and excludes alerts.
+# Divides events into five-minute intervals and groups them by environment and log level.
+# Enables comparison of INFO, WARN, and ERROR event volumes over time.
+FROM sre-lab-logs* | WHERE `service.name` == "checkout-service" AND `event.kind` == "event" | EVAL bucket = DATE_TRUNC(5 minutes, @timestamp) | STATS events = COUNT(*) BY bucket, `deployment.environment`, `log.level` | SORT bucket
+
+# 3. Analyze requests and pool usage by interval
+# Groups checkout-service requests into five-minute windows by environment.
+# Calculates the request count, average and maximum duration, and average and maximum database pool usage.
+# Also includes the maximum pool capacity to facilitate comparison between usage and saturation.
+FROM sre-lab-logs* | WHERE `service.name` == "checkout-service" AND `event.kind` == "event" | EVAL bucket = DATE_TRUNC(5 minutes, @timestamp) | STATS requests = COUNT(*), avg_duration_ms = AVG(duration_ms), max_duration_ms = MAX(duration_ms), avg_pool_active = AVG(`db.pool.active`), max_pool_active = MAX(`db.pool.active`), pool_capacity = MAX(`db.pool.max`) BY bucket, `deployment.environment` | SORT bucket
+
+# 4. Identify pool saturation periods
+# Filters checkout-service events where active connections reach or exceed the pool's maximum capacity.
+# Groups these saturation events into five-minute intervals by environment.
+# Counts the affected events and records the maximum duration observed during each period.
+FROM sre-lab-logs* | WHERE `service.name` == "checkout-service" AND `event.kind` == "event" AND `db.pool.active` >= `db.pool.max` | EVAL bucket = DATE_TRUNC(5 minutes, @timestamp) | STATS saturated_events = COUNT(*), max_duration_ms = MAX(duration_ms) BY bucket, `deployment.environment` | SORT bucket
+
+# 5. Show recorded critical alerts
+# Filters only records classified as alerts from the checkout-service.
+# Keeps the timestamp, environment, level, message, and active and maximum pool values.
+# Sorts alerts chronologically to reconstruct when each incident occurred and triggered an alert.
+FROM sre-lab-logs* | WHERE `service.name` == "checkout-service" AND `event.kind` == "alert" | KEEP @timestamp, `deployment.environment`, `log.level`, message, `db.pool.active`, `db.pool.max` | SORT @timestamp

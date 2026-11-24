@@ -1,0 +1,29 @@
+# 1. Agrupar errores por entorno y mensaje
+# Selecciona solo los eventos de solicitud con nivel ERROR del servicio checkout-service.
+# Cuenta cuántas veces aparece cada mensaje y agrupa los resultados por entorno de despliegue.
+# Ordena los mensajes de mayor a menor cantidad de errores.
+FROM sre-lab-logs* | WHERE `service.name` == "checkout-service" AND `event.kind` == "event" AND `log.level` == "ERROR" | STATS errors = COUNT(*) BY `deployment.environment`, message | SORT errors DESC
+
+# 2. Contar eventos por intervalo de cinco minutos
+# Filtra únicamente los eventos de solicitud del servicio checkout-service y excluye las alertas.
+# Divide los eventos en intervalos de cinco minutos y los agrupa por entorno y nivel de registro.
+# Permite comparar el volumen de eventos INFO, WARN y ERROR a lo largo del tiempo.
+FROM sre-lab-logs* | WHERE `service.name` == "checkout-service" AND `event.kind` == "event" | EVAL bucket = DATE_TRUNC(5 minutes, @timestamp) | STATS events = COUNT(*) BY bucket, `deployment.environment`, `log.level` | SORT bucket
+
+# 3. Analizar solicitudes y uso del pool por intervalo
+# Agrupa las solicitudes del servicio checkout-service en ventanas de cinco minutos por entorno.
+# Calcula la cantidad de solicitudes, la duración promedio y máxima, y el uso promedio y máximo del pool de base de datos.
+# También incluye la capacidad máxima del pool para facilitar la comparación entre uso y saturación.
+FROM sre-lab-logs* | WHERE `service.name` == "checkout-service" AND `event.kind` == "event" | EVAL bucket = DATE_TRUNC(5 minutes, @timestamp) | STATS requests = COUNT(*), avg_duration_ms = AVG(duration_ms), max_duration_ms = MAX(duration_ms), avg_pool_active = AVG(`db.pool.active`), max_pool_active = MAX(`db.pool.active`), pool_capacity = MAX(`db.pool.max`) BY bucket, `deployment.environment` | SORT bucket
+
+# 4. Identificar periodos de saturación del pool
+# Filtra los eventos del servicio checkout-service en los que las conexiones activas alcanzan o superan la capacidad máxima del pool.
+# Agrupa esos eventos saturados en intervalos de cinco minutos por entorno.
+# Cuenta la cantidad de eventos afectados y registra la duración máxima observada durante cada periodo.
+FROM sre-lab-logs* | WHERE `service.name` == "checkout-service" AND `event.kind` == "event" AND `db.pool.active` >= `db.pool.max` | EVAL bucket = DATE_TRUNC(5 minutes, @timestamp) | STATS saturated_events = COUNT(*), max_duration_ms = MAX(duration_ms) BY bucket, `deployment.environment` | SORT bucket
+
+# 5. Mostrar las alertas críticas registradas
+# Filtra únicamente los registros clasificados como alertas del servicio checkout-service.
+# Conserva la fecha, el entorno, el nivel, el mensaje y el estado del pool activo y máximo.
+# Ordena las alertas cronológicamente para reconstruir cuándo se produjo y alertó cada incidencia.
+FROM sre-lab-logs* | WHERE `service.name` == "checkout-service" AND `event.kind` == "alert" | KEEP @timestamp, `deployment.environment`, `log.level`, message, `db.pool.active`, `db.pool.max` | SORT @timestamp

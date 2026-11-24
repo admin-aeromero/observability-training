@@ -1,0 +1,19 @@
+GRAFANA ASSISTANT / GRAFANA PLAY
+1. Explain how to evaluate request rate, 5xx percentage, p95 latency, CPU and DB pool utilization without declaring root cause.
+2. Generate PromQL for HTTP 5xx percentage and explain numerator and denominator.
+3. What evidence would contradict CPU saturation?
+
+1. Create a new dashboard. Keep the key settings of its panels (same datasources, queries, and variables), and add more information to each panel: for example, add descriptions, units, thresholds, legends with stats, and extra related panels.
+can you create alerts based on this dasbhoards?
+
+2. Create Grafana alert rules based on the dashboard "<Dashboard Name>". The data comes from the Infinity CSV datasource. Use the dashboard's thresholds: HTTP 5xx > 5%, latency p95 > 2 s, CPU > 85%, DB pool used > 36 out of 40, DB timeouts > 20.
+
+3. Based on best practices keep only what is crucial?
+
+
+
+
+ELASTIC AI AGENT / ASSISTANT
+1. Group ERROR events for checkout-service by message. Return counts and exact ES|QL.
+2. Create five-minute buckets and identify when database pool errors increase.
+3. Separate Known, Probable, Unknown and Next action. Do not declare root cause without sufficient evidence.
