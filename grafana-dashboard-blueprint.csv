@@ -1,7 +1,0 @@
-panel_title,field,visualization,unit,yellow_threshold,red_threshold
-Request rate,request_rate_rps,Time series,req/s,,
-HTTP 5xx,http_5xx_percent,Time series,percent,2,5
-Latency p95,latency_p95_seconds,Time series,seconds,1,2
-CPU,cpu_percent,Time series,percent,70,85
-DB pool used,db_pool_used,Gauge,connections,30,36
-DB timeouts,db_timeouts,Time series,short,5,20
