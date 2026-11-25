@@ -43,12 +43,12 @@ The metrics contain 45 points per daily window, from 19:20 to 20:04 UTC, at one-
 
 ## Grafana
 
-The metrics CSV files can be explored using the Infinity CSV data source. The [`grafana-dashboard-requirements.csv`](./grafana-dashboard-requirements.csv) file contains a guide to panels and thresholds; [`grafana-prompts.txt`](./grafana-prompts.txt) includes general instructions for creating dashboards, and [`grafana-ai-prompts.txt`](./grafana-ai-prompts.txt) contains Grafana prompts classified by quality and intent, including ambiguous examples and robustness tests.
+The metrics CSV files can be explored using the Infinity CSV data source. The [`grafana-dashboard-requirements.csv`](./grafana-dashboard-requirements.csv) file contains a guide to panels and thresholds. The [`grafana-prompts.txt`](./prompts/grafana-prompts.txt) and [`grafana-prompts-es.txt`](./prompts/grafana-prompts-es.txt) files contain Grafana prompts classified by quality and intent, including ambiguous examples and robustness tests.
 
 The exported dashboards are available in [`dashboards/`](./dashboards/). Verify and configure the dashboard data source in your own instance before importing it.
 
 ## Elasticsearch
 
-The [`elastic-esql.txt`](./elastic-esql.txt) file contains example ES|QL queries for grouping errors, analyzing time ranges, and investigating pool saturation. The [`elastic-prompts.txt`](./elastic-prompts.txt) file contains prompts for exploring logs, uploading CSV files, and creating Kibana dashboards. The `event.kind` field allows alerts to be separated from request events so they are not mixed in aggregations.
+The [`elastic-esql.txt`](./prompts/elastic-esql.txt) file contains example ES|QL queries for grouping errors, analyzing time ranges, and investigating pool saturation. The [`elastic-prompts.txt`](./prompts/elastic-prompts.txt) file contains prompts for exploring logs, uploading CSV files, and creating Kibana dashboards. The `event.kind` field allows alerts to be separated from request events so they are not mixed in aggregations.
 
 Before running the queries, ingest the logs CSV into an index or data stream named `sre-lab-logs*`, or adapt that name to the destination you use.

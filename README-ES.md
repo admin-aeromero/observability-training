@@ -43,12 +43,12 @@ Las métricas tienen 45 puntos por ventana diaria, de 19:20 a 20:04 UTC, a inter
 
 ## Grafana
 
-Los CSV de métricas pueden explorarse con Infinity como fuente de datos CSV. El archivo [`grafana-dashboard-requirements.csv`](./grafana-dashboard-requirements.csv) contiene una guía de paneles y umbrales; [`grafana-prompts.txt`](./grafana-prompts.txt) reúne instrucciones generales para crear dashboards, y [`grafana-ai-prompts.txt`](./grafana-ai-prompts.txt) incluye prompts para Grafana clasificados por calidad e intención, incluidos ejemplos ambiguos y pruebas de robustez.
+Los CSV de métricas pueden explorarse con Infinity como fuente de datos CSV. El archivo [`grafana-dashboard-requirements.csv`](./grafana-dashboard-requirements.csv) contiene una guía de paneles y umbrales. Los archivos [`grafana-prompts.txt`](./prompts/grafana-prompts.txt) y [`grafana-prompts-es.txt`](./prompts/grafana-prompts-es.txt) contienen prompts para Grafana clasificados por calidad e intención, incluidos ejemplos ambiguos y pruebas de robustez.
 
 Los dashboards exportados disponibles están en [`dashboards/`](./dashboards/). Verifica y configura la fuente de datos del dashboard en tu propia instancia antes de importarlo.
 
 ## Elasticsearch
 
-El archivo [`elastic-esql.txt`](./elastic-esql.txt) contiene consultas ES|QL de ejemplo para agrupar errores, analizar intervalos de tiempo e investigar saturación del pool. El archivo [`elastic-prompts.txt`](./elastic-prompts.txt) reúne prompts para explorar los logs, cargar CSV y crear dashboards en Kibana. El campo `event.kind` permite separar alertas de eventos de solicitudes para que no se mezclen en los agregados.
+El archivo [`elastic-esql.txt`](./prompts/elastic-esql.txt) contiene consultas ES|QL de ejemplo para agrupar errores, analizar intervalos de tiempo e investigar saturación del pool. El archivo [`elastic-prompts.txt`](./prompts/elastic-prompts.txt) reúne prompts para explorar los logs, cargar CSV y crear dashboards en Kibana. El campo `event.kind` permite separar alertas de eventos de solicitudes para que no se mezclen en los agregados.
 
 Antes de ejecutar las consultas, ingiere el CSV de logs en un índice o data stream llamado `sre-lab-logs*`, o adapta ese nombre al destino que uses.
