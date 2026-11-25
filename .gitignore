@@ -1,0 +1,15 @@
+# Repository files
+.bkp/
+
+# Editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.tmp

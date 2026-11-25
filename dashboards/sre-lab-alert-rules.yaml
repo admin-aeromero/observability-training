@@ -1,0 +1,830 @@
+apiVersion: 1
+groups:
+    - orgId: 1
+      name: sre-lab-rules
+      folder: GrafanaCloud
+      interval: 5m
+      rules:
+        - uid: 25b73f03-a350-4dd1-bb36-82c2bd2ca936
+          title: SRE - High HTTP 5xx
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: http_5xx_percent
+                      text: HTTP 5xx
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 5
+                        type: gt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: 'El porcentaje de errores 5xx es {{ $values.B }}%. Dashboard: /d/onb4kvj'
+            summary: HTTP 5xx > 5%
+          labels:
+            service: streambox
+            severity: critical
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: 1f4b1c56-4ba3-4f23-9cc3-04115505f198
+          title: SRE - High p95 Latency
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: latency_p95_seconds
+                      text: Latency p95
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 2
+                        type: gt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: 'La latencia p95 es {{ $values.B }} s. Dashboard: /d/onb4kvj'
+            summary: Latencia p95 > 2 s
+          labels:
+            service: streambox
+            severity: critical
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: 4385db99-622c-40a1-b74f-dd4c68756ea2
+          title: SRE - High CPU
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: cpu_percent
+                      text: CPU
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 85
+                        type: gt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: 'La CPU está en {{ $values.B }}%. Dashboard: /d/onb4kvj'
+            summary: CPU > 85%
+          labels:
+            service: streambox
+            severity: critical
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: 2635fadf-ecec-4fa4-93a1-39f7f76e4274
+          title: SRE - DB Pool Nearly Full
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: db_pool_used
+                      text: DB pool used
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 36
+                        type: gt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: 'Conexiones en uso: {{ $values.B }} de 40. Dashboard: /d/onb4kvj'
+            summary: DB pool used > 36 de 40
+          labels:
+            service: streambox
+            severity: critical
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: 88ee7429-7617-407f-9794-dc294b6b4d8f
+          title: SRE - High DB Timeouts
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: db_timeouts
+                      text: DB timeouts
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 20
+                        type: gt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          annotations:
+            description: 'Timeouts de base de datos: {{ $values.B }}. Dashboard: /d/onb4kvj'
+            summary: DB timeouts > 20
+          labels:
+            service: streambox
+            severity: critical
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: a145a044-6a94-40f5-8eaf-ff12aa3d7f69
+          title: SRE - HTTP 5xx Warning
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: http_5xx_percent
+                      text: HTTP 5xx
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 2
+                        type: gt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: 'El porcentaje de errores 5xx es {{ $values.B }}%. Dashboard: /d/onb4kvj'
+            summary: HTTP 5xx > 2%
+          labels:
+            service: streambox
+            severity: warning
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: 7f980ca3-e512-4db4-8240-bb9ea1edd74e
+          title: SRE - p95 Latency Warning
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: latency_p95_seconds
+                      text: Latency p95
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 1
+                        type: gt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: 'La latencia p95 es {{ $values.B }} s. Dashboard: /d/onb4kvj'
+            summary: Latencia p95 > 1 s
+          labels:
+            service: streambox
+            severity: warning
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: f85bd66b-d99e-42fe-86ad-78c1c750e1d2
+          title: SRE - CPU Warning
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: cpu_percent
+                      text: CPU
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 70
+                        type: gt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: 'La CPU está en {{ $values.B }}%. Dashboard: /d/onb4kvj'
+            summary: CPU > 70%
+          labels:
+            service: streambox
+            severity: warning
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: 10e1254d-a25a-4b6f-ba5d-dbaae2a793d6
+          title: SRE - DB Timeouts Warning
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: db_timeouts
+                      text: DB timeouts
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 10
+                        type: gt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          annotations:
+            description: 'Timeouts de base de datos: {{ $values.B }}. Dashboard: /d/onb4kvj'
+            summary: DB timeouts > 10
+          labels:
+            service: streambox
+            severity: warning
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: c34ca885-79af-4915-bf41-60589e518b69
+          title: SRE - DB Pool Usage %
+          condition: F
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: db_pool_used
+                      text: DB pool used
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: db_pool_max
+                      text: DB pool max
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: B
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: C
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: D
+              datasourceUid: __expr__
+              model:
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: D
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: E
+              datasourceUid: __expr__
+              model:
+                expression: $C / $D * 100
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: E
+                type: math
+            - refId: F
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 90
+                        type: gt
+                expression: E
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: F
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: 'Uso del pool de conexiones: {{ $values.E }}%. Dashboard: /d/onb4kvj'
+            summary: DB pool usage > 90%
+          labels:
+            service: streambox
+            severity: critical
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: 0d6db49f-95ad-41f4-b9ef-3beb054cc7c9
+          title: SRE - Traffic Spike
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: request_rate_rps
+                      text: Request rate
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 500
+                        type: gt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: 'Tráfico actual: {{ $values.B }} rps. Dashboard: /d/onb4kvj'
+            summary: Request rate > 500 rps
+          labels:
+            service: streambox
+            severity: warning
+          isPaused: false
+          missing_series_evals_to_resolve: 2
+        - uid: 5be7b082-6e9d-4ce0-8f51-afb6f9b56849
+          title: SRE - Low Request Rate
+          condition: C
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 600
+                to: 0
+              datasourceUid: cg4w9zxjt845ce
+              model:
+                columns:
+                    - selector: timestamp
+                      text: Time
+                      type: timestamp
+                    - selector: request_rate_rps
+                      text: Request rate
+                      type: number
+                filters: []
+                format: timeseries
+                intervalMs: 1000
+                maxDataPoints: 43200
+                parser: backend
+                refId: A
+                root_selector: ""
+                source: url
+                type: csv
+                url: https://raw.githubusercontent.com/admin-aeromero/observability-training/refs/heads/development/sre-lab-metrics.csv
+                url_options:
+                    data: ""
+                    method: GET
+            - refId: B
+              datasourceUid: __expr__
+              model:
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: B
+                settings:
+                    mode: dropNN
+                type: reduce
+            - refId: C
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 10
+                        type: lt
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: C
+                type: threshold
+          noDataState: NoData
+          execErrState: Error
+          for: 5m
+          annotations:
+            description: 'Tráfico actual: {{ $values.B }} rps. Posible caída del servicio. Dashboard: /d/onb4kvj'
+            summary: Request rate < 10 rps
+          labels:
+            service: streambox
+            severity: critical
+          isPaused: false
+          missing_series_evals_to_resolve: 2
