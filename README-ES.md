@@ -1,4 +1,4 @@
-# Observability training: Movie Store checkout
+# Observability Training
 
 ## Contexto
 
@@ -18,9 +18,9 @@ Durante el incidente de producción coinciden errores HTTP 5xx, latencia p95 ele
 
 | Archivo | Contenido |
 | --- | --- |
-| [`sre-lab-metrics.csv`](./sre-lab-metrics.csv) | Métricas técnicas por minuto: tasa de solicitudes, porcentaje de 5xx, latencia p95, CPU, conexiones del pool y timeouts de base de datos. |
-| [`sre-lab-business-metrics.csv`](./sre-lab-business-metrics.csv) | Métricas de negocio por minuto: checkouts iniciados y completados, carritos abandonados y pagos intentados y rechazados. |
-| [`sre-lab-logs.csv`](./sre-lab-logs.csv) | Muestras de eventos de checkout y una alerta crítica. Contiene cinco eventos de solicitud por intervalo de métricas, más la alerta. |
+| [`sre-lab-metrics.csv`](./data/sre-lab-metrics.csv) | Métricas técnicas por minuto: tasa de solicitudes, porcentaje de 5xx, latencia p95, CPU, conexiones del pool y timeouts de base de datos. |
+| [`sre-lab-business-metrics.csv`](./data/sre-lab-business-metrics.csv) | Métricas de negocio por minuto: checkouts iniciados y completados, carritos abandonados y pagos intentados y rechazados. |
+| [`sre-lab-logs.csv`](./data/sre-lab-logs.csv) | Muestras de eventos de checkout y una alerta crítica. Contiene cinco eventos de solicitud por intervalo de métricas, más la alerta. |
 
 Los archivos de métricas comparten `timestamp`, `service`, `environment` y `phase`, así que pueden relacionarse directamente por timestamp. Los logs usan los campos `@timestamp`, `service.name` y `deployment.environment`; los eventos de solicitud pueden identificarse con `event.kind=event` y la alerta con `event.kind=alert`.
 

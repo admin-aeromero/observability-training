@@ -1,4 +1,4 @@
-# Observability training: Movie Store checkout
+# Observability Training
 
 ## Context
 
@@ -18,9 +18,9 @@ During the production incident, HTTP 5xx errors, elevated p95 latency, database 
 
 | File | Content |
 | --- | --- |
-| [`sre-lab-metrics.csv`](./sre-lab-metrics.csv) | Per-minute technical metrics: request rate, 5xx percentage, p95 latency, CPU, pool connections, and database timeouts. |
-| [`sre-lab-business-metrics.csv`](./sre-lab-business-metrics.csv) | Per-minute business metrics: started and completed checkouts, abandoned carts, and attempted and rejected payments. |
-| [`sre-lab-logs.csv`](./sre-lab-logs.csv) | Samples of checkout events and one critical alert. Contains five request events per metrics interval, plus the alert. |
+| [`sre-lab-metrics.csv`](./data/sre-lab-metrics.csv) | Per-minute technical metrics: request rate, 5xx percentage, p95 latency, CPU, pool connections, and database timeouts. |
+| [`sre-lab-business-metrics.csv`](./data/sre-lab-business-metrics.csv) | Per-minute business metrics: started and completed checkouts, abandoned carts, and attempted and rejected payments. |
+| [`sre-lab-logs.csv`](./data/sre-lab-logs.csv) | Samples of checkout events and one critical alert. Contains five request events per metrics interval, plus the alert. |
 
 The metrics files share `timestamp`, `service`, `environment`, and `phase`, so they can be correlated directly by timestamp. The logs use the fields `@timestamp`, `service.name`, and `deployment.environment`; request events can be identified with `event.kind=event`, and the alert with `event.kind=alert`.
 
